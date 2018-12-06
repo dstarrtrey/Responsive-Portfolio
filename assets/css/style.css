@@ -1,0 +1,245 @@
+html{
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin: 0 0 0 0;
+    background-image: url(../images/gravel.png);
+    background-repeat: repeat;
+}
+header{
+    background-color: #ffffff;
+    width: 100%;
+    display: inline-block;
+    border-bottom: 2px solid #cccccc;
+}
+main{
+    background-color: #ffffff;
+    max-width: 960px;
+    margin: 20px auto;
+    border: 3px solid #dddddd;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 10px 30px 30px 30px;
+}
+footer{
+    background-color: #666666;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    border-top: 8px solid #4aaaa5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+footer p{
+    padding-top: 30px;
+    color: #dddddd;
+    line-height: normal;
+    margin: 0;
+    line-height: 1;
+}
+.content{
+    max-width: 960px;
+    margin: auto;
+}
+h1,h2{
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+h1{
+    color: #ffffff;
+    background-color: #4aaaa5;
+    padding: 30px 20px;
+    margin: 0 0 0 0;
+    float: left;
+    font-size: 2em;
+    font-weight: bold;
+}
+h2{
+    color: #4aaaa5;
+    padding: 30px 0;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+hr{
+    border-top: 2px solid #cccccc;
+    margin-bottom: 40px;
+}
+nav{
+    height: 100%;
+    float: right;
+    margin: 0 0 0 0;
+    padding:  35px 0px 0px 0px;
+}
+nav a{
+    font-size: 20px;
+    padding: 3px 10px;
+    text-decoration: none;
+    line-height: normal;
+    border-radius: 3px;
+    transition: color .5s, background-color 0.5s;
+    -webkit-transition: color 0.5s, background-color 0.5s;
+    -moz-transition: color 0.5s, background-color 0.5s;
+    -ms-transition: color 0.5s, background-color 0.5s;
+    -o-transition: color 0.5s, background-color 0.5s;
+}
+nav a:hover{
+    text-decoration: underline;
+    background-color: #4aaaa5;
+    color: #ffffff;
+}
+p,a, form, input, textarea{
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777777;
+    margin-top: 0;
+    line-height: 2;
+}
+p{
+    display: block;
+    margin-top: 0em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 18px;
+}
+.profile{
+    float: left;
+    margin-right: 20px;
+    border: 2px solid #666666;
+    margin-top: .6em
+}
+img{
+    border-radius: 3px;
+}
+.grid-container{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    width: 100%;
+}
+.grid-item{
+    position: relative;
+}
+.grid-item img{
+    width: 100%;
+    height: auto;
+}
+figcaption{
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 20px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #4aaaa5;
+    border: 1px solid #666666;
+    box-sizing: border-box;
+}
+figcaption a{
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+}
+figcaption a:hover{
+    text-decoration: underline;
+}
+form{
+    width: 100%;
+    font-size: 18px;
+}
+.text-input{
+    width: 100%; 
+    margin-bottom: 0.5em;
+    font-size: 18px;
+    padding-left: 10px;
+}
+textarea{
+    height: 200px;
+    font-size: 18px;
+}
+.submit-button{
+    background-color: #4aaaa5; /* Green */
+    border: none;
+    color: #ffffff;
+    padding: 10px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -ms-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+}
+.submit-button:hover{
+    background-color: #5E7F7E;
+}
+
+@media screen and (max-width: 980px){
+    main{
+        margin: 5% 2em;
+        width: 60%;
+    }
+    nav{
+        margin-right: 5%;
+    }
+    .profile{
+        width: 30%;
+        height: auto;
+    }
+    .grid-container{
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 768px){
+    main{
+        margin: 2em auto;
+        width: 94%;
+    }
+    nav{
+        margin-right: 3%;
+    }
+    h1{
+        margin-left: 3%;
+    }
+    .profile{
+        width: 50%;
+        height: auto;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 640px){
+    header{
+        position: static;
+    }
+    h1{
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+    nav{
+        width: 100%;
+        text-align: center;
+        position: relative;
+        bottom: 1em;
+        margin-right: 0;
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+    .grid-container{
+        grid-template-columns: auto;
+    }
+    .profile{
+        margin-bottom: 1em;
+    }
+
+}
