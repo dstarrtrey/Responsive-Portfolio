@@ -46,9 +46,11 @@ function animate(oldContent, newContent) {
     oldContent.parentNode.removeChild(oldContent);
   };
 }
-
-window.addEventListener('popstate', changePage);
-document.addEventListener('click', function(e) {
+function listener(e) {
+  document.removeEventListener('click', listener);
+  setTimeout(function(){
+    document.addEventListener('click', listener);
+  }, 2000);
   var el = e.target;
 
   while (el && !el.href) {
@@ -61,4 +63,6 @@ document.addEventListener('click', function(e) {
     changePage();
     return;
   }
-});
+}
+window.addEventListener('popstate', changePage);
+document.addEventListener('click', listener);
