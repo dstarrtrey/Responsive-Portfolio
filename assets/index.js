@@ -30,17 +30,19 @@ function changePage() {
     animate(oldContent, newContent);
   });
 }
+var transitionTime = 1000;
+var notDouble = true;
 
 function animate(oldContent, newContent) {
   oldContent.style.position = 'absolute';
-
+  setTimeout(function(){notDouble = true}, 1000);
   var fadeOut = oldContent.animate({
     opacity: [1, 0]
-  }, 1000);
+  }, transitionTime);
 
   var fadeIn = newContent.animate({
     opacity: [0, 1]
-  }, 1000);
+  }, transitionTime);
 
   fadeIn.onfinish = function() {
     oldContent.parentNode.removeChild(oldContent);
@@ -48,19 +50,20 @@ function animate(oldContent, newContent) {
 }
 
 window.addEventListener('popstate', changePage);
-
 document.addEventListener('click', function(e) {
-  var el = e.target;
+  if(notDouble===true){
+    var el = e.target;
 
-  while (el && !el.href) {
-    el = el.parentNode;
-  }
+    while (el && !el.href) {
+      el = el.parentNode;
+    }
 
-  if (el) {
-    e.preventDefault();
-    history.pushState(null, null, el.href);
-    changePage();
-
-    return;
+    if (el) {
+      e.preventDefault();
+      history.pushState(null, null, el.href);
+      changePage();
+      notDouble = false;
+      return;
+    }
   }
 });
