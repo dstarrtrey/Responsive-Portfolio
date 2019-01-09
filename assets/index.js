@@ -32,7 +32,7 @@ function changePage() {
 }
 
 function animate(oldContent, newContent) {
-  oldContent.style.position = 'absolute';
+  //oldContent.style.position = 'absolute';
 
   var fadeOut = oldContent.animate({
     opacity: [1, 0]
