@@ -16,17 +16,22 @@ header{
     border-bottom: 2px solid #cccccc;
 }
 main{
+    
+    position: relative;
     background-color: #ffffff;
     max-width: 960px;
     margin: 20px auto;
     border: 3px solid #dddddd;
     overflow: auto;
     box-sizing: border-box;
-    padding: 10px 30px 30px 30px;
+    /* padding: 10px 30px 30px 30px; */
 }
 .cc{
     width: 100%;
-    border: 3px solid black
+    height: 100%;
+    border: 3px solid black;
+    box-sizing: border-box;
+    position: absolute;
 }
 footer{
     background-color: #666666;
