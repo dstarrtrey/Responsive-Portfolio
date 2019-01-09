@@ -16,13 +16,12 @@ header{
     border-bottom: 2px solid #cccccc;
 }
 main{
-    
     position: relative;
     background-color: #ffffff;
     max-width: 960px;
     margin: 20px auto;
     border: 3px solid #dddddd;
-    overflow: auto;
+    overflow: hidden;
     box-sizing: border-box;
     /* padding: 10px 30px 30px 30px; */
 }
