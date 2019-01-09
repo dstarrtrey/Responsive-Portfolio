@@ -50,7 +50,7 @@ function listener(e) {
   document.removeEventListener('click', listener);
   setTimeout(function(){
     document.addEventListener('click', listener);
-  }, 2000);
+  }, 1000);
   var el = e.target;
 
   while (el && !el.href) {
