@@ -24,6 +24,10 @@ main{
     box-sizing: border-box;
     padding: 10px 30px 30px 30px;
 }
+.cc{
+    width: 100%;
+    border: 3px solid black
+}
 footer{
     background-color: #666666;
     text-align: center;
