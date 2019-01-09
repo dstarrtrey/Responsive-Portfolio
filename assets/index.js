@@ -35,6 +35,7 @@ var notDouble = true;
 
 function animate(oldContent, newContent) {
   oldContent.style.position = 'absolute';
+  notDouble = false;
   setTimeout(function(){notDouble = true}, 1000);
   var fadeOut = oldContent.animate({
     opacity: [1, 0]
@@ -62,7 +63,6 @@ document.addEventListener('click', function(e) {
       e.preventDefault();
       history.pushState(null, null, el.href);
       changePage();
-      notDouble = false;
       return;
     }
   }
