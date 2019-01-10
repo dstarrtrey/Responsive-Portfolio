@@ -33,12 +33,11 @@ function changePage() {
 var transitionTime = 1000;
 
 function animate(oldContent, newContent) {
-  oldContent.style.position = 'absolute';
   var fadeOut = oldContent.animate({
-    opacity: [1, 0],
+    opacity: [1, 0], 
   }, transitionTime);
 
-  var fadeIn = newContent.animate({
+  var fadeIn = newContent.delay(transitionTime).animate({
     opacity: [0, 1], 
   }, transitionTime);
 
