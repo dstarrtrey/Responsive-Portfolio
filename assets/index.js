@@ -35,11 +35,11 @@ var transitionTime = 1000;
 function animate(oldContent, newContent) {
   oldContent.style.position = 'absolute';
   var fadeOut = oldContent.animate({
-    opacity: [1, 0]
+    opacity: [1, 0], width: [1, 0]
   }, transitionTime);
 
   var fadeIn = newContent.animate({
-    opacity: [0, 1]
+    opacity: [0, 1], width: [0, 1]
   }, transitionTime);
 
   fadeIn.onfinish = function() {
