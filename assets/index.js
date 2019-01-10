@@ -74,6 +74,7 @@ const listen = x => {
         console.log("href", target.href);
         x.preventDefault();
         history.pushState(null, null, target.href);
+        console.log(history);
         //switchPage();
         return true;
     }
