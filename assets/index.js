@@ -69,9 +69,12 @@ const listen = x => {
         target = target.parentNode;
     } 
     if (target) {
+        console.log(history);
+        console.log(target);
+        console.log("href", target.href);
         x.preventDefault();
         history.pushState(null, null, target.href);
-        switchPage();
+        //switchPage();
         return true;
     }
 };
