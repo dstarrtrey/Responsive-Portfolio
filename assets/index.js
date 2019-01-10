@@ -35,11 +35,11 @@ var transitionTime = 1000;
 function animate(oldContent, newContent) {
   oldContent.style.position = 'absolute';
   var fadeOut = oldContent.animate({
-    opacity: [1, 0],
+    height: "0",
   }, transitionTime);
 
   var fadeIn = newContent.animate({
-    opacity: [0, 1], 
+    height: "100%", 
   }, transitionTime);
 
   fadeIn.onfinish = function() {
@@ -50,7 +50,7 @@ function listener(e) {
   document.removeEventListener('click', listener);
   setTimeout(function(){
     document.addEventListener('click', listener);
-  }, 1000);
+  }, transitionTime);
   var el = e.target;
 
   while (el && !el.href) {
