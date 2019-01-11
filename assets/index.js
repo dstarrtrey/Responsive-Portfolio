@@ -24,9 +24,9 @@ const animateIn = () => {
 }
 
 $("nav").on("click", function(clickElement){
-  animateOut();
-  loadPage(clickElement);
-  animateIn();
+  animateOut().then(
+    loadPage(clickElement)).then(
+      animateIn());
 });
 
 
