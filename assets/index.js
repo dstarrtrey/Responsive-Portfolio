@@ -23,7 +23,7 @@ const animateOut = () => {
     "height": "50px",
     "margin": "auto"
   });
-}
+};
 const animateIn = () => {
   console.log("animating in");
   $("main").css({
@@ -31,7 +31,7 @@ const animateIn = () => {
     "width": "94%",
     "height": "inherit"
   });
-}
+};
 
 $("nav").on("click", function(clickElement){
   loadPage(clickElement);
