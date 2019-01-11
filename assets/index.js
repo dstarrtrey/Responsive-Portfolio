@@ -1,13 +1,16 @@
 $("nav").on("click", function(link){
   if(link.target != link.currentTarget){
     link.preventDefault();
-    const url = link.target.href
+    const data = link.target.getAttribute('data-href');
+    const url = link.target.href;
     console.log(url);
-    history.pushState(null, null, url);
+    history.pushState(data, null, url);
   }
   link.stopPropogation();
 });
-
+$("window").on("popstate", function(link){
+  
+});
 
 
 
