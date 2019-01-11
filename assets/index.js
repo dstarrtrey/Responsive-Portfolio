@@ -9,7 +9,7 @@ const loadPage = link => {
       history.pushState(data, null, url);
     }, 3000);
   }
-  link.stopPropogation();
+  //link.stopPropogation();
 };
 const requestContent = file => {
   $('.cc').load(file + ' .cc');
