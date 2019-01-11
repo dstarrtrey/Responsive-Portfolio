@@ -18,11 +18,18 @@ const requestContent = file => {
 }
 const animateOut = () => {
   console.log("animating out");
-  $("main").css({
+  $("main").animate({
     "width": "50px",
     "height": "50px",
     "margin": "auto"
+  }, 1000, function() {
+    // Animation complete.
   });
+  // $("main").css({
+  //   "width": "50px",
+  //   "height": "50px",
+  //   "margin": "auto"
+  // });
 };
 const animateIn = () => {
   console.log("animating in");
