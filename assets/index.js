@@ -4,12 +4,17 @@ $("nav").on("click", function(link){
     const data = link.target.getAttribute('data-href');
     const url = link.target.href;
     console.log(url);
+    requestContent(url);
     history.pushState(data, null, url);
   }
   link.stopPropogation();
 });
+function requestContent(file) {
+  $('.content').load(file + ' .cc');
+}
+
 $("window").on("popstate", function(link){
-  
+
 });
 
 
