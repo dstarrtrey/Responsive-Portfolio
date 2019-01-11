@@ -1,9 +1,3 @@
-$("nav").on("click", function(clickElement){
-  //animate out,
-  loadPage(clickElement);
-  //then animate in.
-});
-
 const loadPage = link => {
   if(link.target != link.currentTarget){
     link.preventDefault();
@@ -20,6 +14,21 @@ const loadPage = link => {
 const requestContent = file => {
   $('.cc').load(file + ' .cc');
 }
+const animateOut = () => {
+  console.log("animating out");
+
+}
+const animateIn = () => {
+  console.log("animating in");
+
+}
+
+$("nav").on("click", function(clickElement){
+  animateOut();
+  loadPage(clickElement);
+  animateIn();
+});
+
 
 // $("window").on("popstate", function(link){
 //   var character = link.state;
