@@ -33,11 +33,16 @@ const animateOut = () => {
 };
 const animateIn = () => {
   console.log("animating in");
-  $("main").css({
-    "margin": "2em auto",
-    "width": "94%",
-    "height": "inherit"
-  });
+  $("main").animate({
+    margin: "2em auto",
+    width: "94%",
+    height: "inherit"
+  }, {duration:1000, queue: false});
+  // $("main").css({
+  //   "margin": "2em auto",
+  //   "width": "94%",
+  //   "height": "inherit"
+  // });
 };
 
 $("nav").on("click", function(clickElement){

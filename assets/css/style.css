@@ -16,7 +16,6 @@ header{
     border-bottom: 2px solid #cccccc;
 }
 main{
-    overflow: hidden;
     position: relative;
     background-color: #ffffff;
     max-width: 960px;
@@ -24,7 +23,7 @@ main{
     border: 3px solid #dddddd;
     overflow: hidden;
     box-sizing: border-box;
-    /* padding: 10px 30px 30px 30px; */
+    padding: 30px 30px 30px 30px;
 }
 .cc{
     width: 100%;
