@@ -36,7 +36,7 @@ const animateIn = () => {
   $("main").animate({
     margin: "2em auto",
     width: "94%",
-    height: "inherit"
+    height: "100%"
   }, {duration:1000, queue: false});
   // $("main").css({
   //   "margin": "2em auto",
