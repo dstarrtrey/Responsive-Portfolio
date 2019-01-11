@@ -10,7 +10,8 @@ $("nav").on("click", function(link){
   link.stopPropogation();
 });
 function requestContent(file) {
-  $('.content').load(file + ' .cc');
+  $('.cc').load(file + ' .cc');
+
 }
 
 // $("window").on("popstate", function(link){
