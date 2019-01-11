@@ -14,21 +14,21 @@ function requestContent(file) {
 
 }
 
-$("window").on("popstate", function(link){
-  var character = link.state;
+// $("window").on("popstate", function(link){
+//   var character = link.state;
 
-  if (character == null) {
-    removeCurrentClass();
-    $("main").innerHTML = " ";
-    $(".cc").innerHTML = " ";
-    document.title = defaultTitle;
-  } else {
-      updateText(character);
-      requestContent(character + ".html");
-      addCurrentClass(character);
-      document.title = "Ghostbuster | " + character;
-  }
-});
+//   if (character == null) {
+//     removeCurrentClass();
+//     $("main").innerHTML = " ";
+//     $(".cc").innerHTML = " ";
+//     document.title = defaultTitle;
+//   } else {
+//       updateText(character);
+//       requestContent(character + ".html");
+//       addCurrentClass(character);
+//       document.title = "Ghostbuster | " + character;
+//   }
+// });
 
 
 
