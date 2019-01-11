@@ -4,11 +4,11 @@ const loadPage = link => {
     const data = link.target.getAttribute('data-href');
     const url = link.target.href;
     console.log(url);
-    setTimeout(function(){
+    animateOut().then(setTimeout(function(){
       requestContent(url);
       history.pushState(data, null, url);
       animateIn();
-    }, 3000);
+    }, 3000));
   }
   link.stopPropogation();
 };
@@ -25,8 +25,7 @@ const animateIn = () => {
 }
 
 $("nav").on("click", function(clickElement){
-  animateOut().then(
-    loadPage(clickElement))
+  loadPage(clickElement);
 });
 
 
