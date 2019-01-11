@@ -18,12 +18,9 @@ const requestContent = file => {
 }
 const animateOut = () => {
   console.log("animating out");
-  $("main").animate({
-    width: "50px",
-    height: "50px",
-    margin: "auto"
-  }, {duration:1000, queue: false});
-  
+  $("main").animate({height: "50px"}, {duration:1000, queue: false});
+  $("main").animate({margin: "auto"}, {duration: 1000, queue: false});
+  $("main").animate({width: "50px"}, {duration: 1000, queue: false});
   // $("main").css({
   //   "width": "50px",
   //   "height": "50px",
