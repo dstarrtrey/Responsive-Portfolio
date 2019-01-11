@@ -7,9 +7,10 @@ const loadPage = link => {
     setTimeout(function(){
       requestContent(url);
       history.pushState(data, null, url);
+      animateIn();
     }, 3000);
   }
-  //link.stopPropogation();
+  link.stopPropogation();
 };
 const requestContent = file => {
   $('.cc').load(file + ' .cc');
@@ -25,8 +26,7 @@ const animateIn = () => {
 
 $("nav").on("click", function(clickElement){
   animateOut().then(
-    loadPage(clickElement)).then(
-      animateIn());
+    loadPage(clickElement))
 });
 
 
