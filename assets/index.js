@@ -1,5 +1,7 @@
 $("nav").on("click", function(clickElement){
-  setTimeout(function(){loadPage(clickElement)}, 30000);
+  //animate out,
+  loadPage(clickElement);
+  //then animate in.
 });
 
 const loadPage = link => {
@@ -8,8 +10,10 @@ const loadPage = link => {
     const data = link.target.getAttribute('data-href');
     const url = link.target.href;
     console.log(url);
-    requestContent(url);
-    history.pushState(data, null, url);
+    setTimeout(function(){
+      requestContent(url);
+      history.pushState(data, null, url);
+    }, 3000);
   }
   link.stopPropogation();
 };
