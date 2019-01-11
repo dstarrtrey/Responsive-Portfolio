@@ -1,4 +1,8 @@
-$("nav").on("click", function(link){
+$("nav").on("click", function(clickElement){
+  setTimeout(function(){loadPage(clickElement)}, 30000);
+});
+
+const loadPage = link => {
   if(link.target != link.currentTarget){
     link.preventDefault();
     const data = link.target.getAttribute('data-href');
@@ -8,10 +12,9 @@ $("nav").on("click", function(link){
     history.pushState(data, null, url);
   }
   link.stopPropogation();
-});
-function requestContent(file) {
+};
+const requestContent = file => {
   $('.cc').load(file + ' .cc');
-
 }
 
 // $("window").on("popstate", function(link){
