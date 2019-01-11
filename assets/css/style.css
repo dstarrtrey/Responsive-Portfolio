@@ -24,7 +24,6 @@ main{
     border: 3px solid #dddddd;
     overflow: hidden;
     box-sizing: border-box;
-    transition: height 1s ease-in-out;
     /* padding: 10px 30px 30px 30px; */
 }
 .cc{
