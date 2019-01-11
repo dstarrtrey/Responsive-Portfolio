@@ -11,7 +11,7 @@ const loadPage = link => {
       animateIn();
     }, 3000);
   }
-  //link.stopPropogation();
+  link.stopPropogation();
 };
 const requestContent = file => {
   $('.cc').load(file + ' .cc');
