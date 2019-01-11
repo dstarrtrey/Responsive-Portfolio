@@ -19,8 +19,8 @@ $("window").on("popstate", function(link){
 
   if (character == null) {
     removeCurrentClass();
-    textWrapper.innerHTML = " ";
-    content.innerHTML = " ";
+    $("main").innerHTML = " ";
+    $(".cc").innerHTML = " ";
     document.title = defaultTitle;
   } else {
       updateText(character);
