@@ -1,16 +1,40 @@
-const navLink = $(".nav-link");
-const main = $("main");
-const ttlAniLnth = 1000; //Total animation length
-const cache = {};
-const loadPage = url => {
-    if(cache[url]){
-        return new Promise(resolve => resolve(cache[url]));
-    } else{
-        return fetch(url, {
-        method: 'GET'
-        }).then(response => {cache[url] = response.text; return cache[url]});
-    }
-};
+$("nav").on("click", function(link){
+  if(link.target != link.currentTarget){
+    link.preventDefault();
+    const url = link.target.href
+    console.log(url);
+    history.pushState(null, null, url);
+  }
+  link.stopPropogation();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const navLink = $(".nav-link");
+// const main = $("main");
+// const ttlAniLnth = 1000; //Total animation length
+// const cache = {};
+// const loadPage = url => {
+//     if(cache[url]){
+//         return new Promise(resolve => resolve(cache[url]));
+//     } else{
+//         return fetch(url, {
+//         method: 'GET'
+//         }).then(response => {cache[url] = response.text; return cache[url]});
+//     }
+// };
 // var cache = {};
 // function loadPage(url) {
 //   if (cache[url]) {
@@ -26,18 +50,18 @@ const loadPage = url => {
 //   });
 // }
 
-const animateContent = (bfor, aftr) => {
-    bfor.style.position = 'absolute';
-    const fadeOut = bfor.animate({
-        opacity: [1, 0],
-    }, ttlAniLnth);
-    const fadeIn = aftr.animate({
-        opacity: [0, 1], 
-    }, ttlAniLnth);
-    fadeIn.onfinish = function() {
-        bfor.parent().remove(bfor);
-    };
-};
+// const animateContent = (bfor, aftr) => {
+//     bfor.style.position = 'absolute';
+//     const fadeOut = bfor.animate({
+//         opacity: [1, 0],
+//     }, ttlAniLnth);
+//     const fadeIn = aftr.animate({
+//         opacity: [0, 1], 
+//     }, ttlAniLnth);
+//     fadeIn.onfinish = function() {
+//         bfor.parent().remove(bfor);
+//     };
+// };
 //function animate(oldContent, newContent) {
   //   var fadeOut = oldContent.animate({
   //     opacity: [1, 0], 
@@ -51,34 +75,34 @@ const animateContent = (bfor, aftr) => {
   //     oldContent.parentNode.removeChild(oldContent);
   //   };
   // }
-const switchPage = () => {
-    const url = location.href;
-    loadPage(url).then(responseText => {
-        const loadedDiv = $("<div>");
-        loadedDiv.html(responseText);
-    });
-    const oldStuff = $(".cc");
-    const newStuff = loadedDiv.querySelector(".cc");
-    main.append(newStuff);
-    animateContent(oldStuff, newStuff);
-};
+// const switchPage = () => {
+//     const url = location.href;
+//     loadPage(url).then(responseText => {
+//         const loadedDiv = $("<div>");
+//         loadedDiv.html(responseText);
+//     });
+//     const oldStuff = $(".cc");
+//     const newStuff = loadedDiv.querySelector(".cc");
+//     main.append(newStuff);
+//     //animateContent(oldStuff, newStuff);
+// };
 
-const listen = x => {
-    let target = x.target;
-    while (target && !target.href) {
-        target = target.parentNode;
-    } 
-    if (target) {
-        console.log(history);
-        console.log(target);
-        console.log("href", target.href);
-        x.preventDefault();
-        history.pushState(null, null, target.href);
-        console.log(history);
-        //switchPage();
-        return true;
-    }
-};
+// const listen = x => {
+//     let target = x.target;
+//     while (target && !target.href) {
+//         target = target.parentNode;
+//     } 
+//     if (target) {
+//         console.log(history);
+//         console.log(target);
+//         console.log("href", target.href);
+//         x.preventDefault();
+//         history.pushState(null, null, target.href);
+//         console.log(history);
+//         //switchPage();
+//         return true;
+//     }
+// };
 // 
 // function listener(e) {
 //   document.removeEventListener('click', listener);
@@ -98,8 +122,8 @@ const listen = x => {
 //     return;
 //   }
 // }
-window.addEventListener('popstate', switchPage);
-document.addEventListener('click', listen);
+// window.addEventListener('popstate', switchPage);
+// document.addEventListener('click', listen);
 
 
 
