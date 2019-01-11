@@ -18,11 +18,19 @@ const requestContent = file => {
 }
 const animateOut = () => {
   console.log("animating out");
-
+  $("main").css({
+    "width": "50px",
+    "height": "50px",
+    "margin": "auto"
+  });
 }
 const animateIn = () => {
   console.log("animating in");
-
+  $("main").css({
+    "margin": "2em auto",
+    "width": "94%",
+    "height": "inherit"
+  });
 }
 
 $("nav").on("click", function(clickElement){
