@@ -4,11 +4,12 @@ const loadPage = link => {
     const data = link.target.getAttribute('data-href');
     const url = link.target.href;
     console.log(url);
-    animateOut().then(setTimeout(function(){
+    animateOut();
+    setTimeout(function(){
       requestContent(url);
       history.pushState(data, null, url);
       animateIn();
-    }, 3000));
+    }, 3000);
   }
   link.stopPropogation();
 };
