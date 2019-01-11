@@ -23,7 +23,7 @@ const animateOut = () => {
     height: "50px",
     margin: "auto"
   }, {duration:1000, queue: false});
-  $("main").animate({height: "50px"});
+  
   // $("main").css({
   //   "width": "50px",
   //   "height": "50px",
